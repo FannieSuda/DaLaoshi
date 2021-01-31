@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <!--开源博客：test.gifts-->
-    <title>合成大尼莫</title>
+    <title>合成尼哥</title>
 
     <!--http://www.html5rocks.com/en/mobile/mobifying/-->
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1, minimum-scale=1,maximum-scale=1" />
@@ -52,15 +51,12 @@
             window.history.pushState(state, state.title, state.url);
         }
     </script> -->
-    <script type="text/javascript">
-        var ua = navigator.userAgent.toLowerCase(); //获取判断用的对象
-        //判断是否是微信下访问
-        if (ua.match(/MicroMessenger/i) == "micromessenger") {
-            // if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-            location.href = "https://mp.weixin.qq.com/s/m0U0L-vnD0Gu8aPJ2vcPoA";
-            // }
+    <!--  <script type="text/javascript">
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf("qbwebviewtype") > 0) {
+           location.href = "http://g.fromgame.com/game/462/";
         }
-    </script>
+    </script> -->
 
     <link rel="stylesheet" type="text/css" href="style-mobile.css" />
 
@@ -71,19 +67,14 @@
 
     <div id="canvasDiv" style="width:100%;height:100%;">
         <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
-
-        <video id="contentElement" style="display:none;position: absolute;top:0px;left: 0px;">
-                <source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.mp4"></source>
-                <source src="http://rmcdn.2mdn.net/Demo/vast_inspector/android.webm"></source>
-      </video>
         <div id="block-Box" style="display:block;width:100%;height:100%;"></div>
     </div>
 
 
-    
+
     <div id="adContainer" style="display:none;position: absolute;top:0px;left: 0px;width:100%;height:100%;z-index:999;"></div>
     <div id="loadingText" style="width:100%;display: none;text-align:center;position:absolute;top:45%;z-index:2;font-size:20px;color:#f99f0a">
-        捉尼莫中......0%
+        loading......0%
     </div>
 
     <div id="splash">
@@ -97,8 +88,10 @@
     </div>
 
 
-    <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
-    <script type="text/javascript" src="ads.js"></script>
+
+
+    <!--<div align="center" style="font-size: 10px;color: dimgrey">advertisement</div>-->
+
 
     <script src="src/settings.js" charset="utf-8"></script>
 
@@ -113,23 +106,24 @@
         judgeLanTitle();
 
         function judgeLanTitle() {
+            alert("点击宝箱,切换西瓜。破坏游戏体验，谨慎尝试。")
 
             //        console.log("window.navigator.language",window.navigator.language);
 
             if (window.navigator.language == "zh-CN" || window.navigator.language == "zh-cn") {
-                document.title = "合成大尼莫";
+                document.title = "合成尼哥";
             } else if (window.navigator.language == "zh-TW") {
-                document.title = "合成大尼莫";
+                document.title = "合成尼哥";
             } else if (window.navigator.language == "zh-HK") {
-                document.title = "合成大尼莫";
+                document.title = "合成尼哥";
             } else if (window.navigator.language == "ko-KR") {
-                document.title = "合成大尼莫";
+                document.title = "合成尼哥";
             } else if (window.navigator.language == "ja-JP") {
-                document.title = "合成大尼莫";
+                document.title = "合成尼哥";
             } else if (window.navigator.language == "th-TH") {
-                document.title = "合成大尼莫";
+                document.title = "合成尼哥";
             } else {
-                document.title = "Little game：Synthetic watermelon";
+                document.title = "合成尼哥";
             }
 
 
@@ -203,7 +197,7 @@
                 if (tempSeconds > 100) {
                     clearInterval(timer);
                     tempSeconds = 100
-                    loadintT.innerHTML = '捉尼莫中......' + parseInt(tempSeconds) + '%';
+                    loadintT.innerHTML = 'loading......' + parseInt(tempSeconds) + '%';
                 }
             }, t * 1000);
         }
@@ -226,14 +220,6 @@
     <script src="src/settings.js" charset="utf-8"></script>
 
     <script src="main.js" charset="utf-8"></script>
-
-
-    <script>
-        window.adsbygoogle = window.adsbygoogle || [];
-        const adBreak = function(o) {
-            adsbygoogle.push(o);
-        }
-    </script>
 
 
     <script type="text/javascript">
